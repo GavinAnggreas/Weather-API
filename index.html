@@ -124,13 +124,11 @@
 </section>
     <script>
         const apiKey = 'b5dd3d9b22b2326c6d216e80df3757fc';
-        const apiUrl = 'http://api.openweathermap.org/data/2.5/weather';
-
-
+        const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
         
         document.getElementById('search').addEventListener('click', async () => {
             const city = document.getElementById('kota').value;
-            const ambil = await fetch(`${apiUrl}?q=${city}&appid=${apiKey}`);
+            const ambil = await fetch(`${apiUrl}${city}&appid=${apiKey}`);
             const data = await ambil.json();
             const icon = document.querySelector(".icon");
 
